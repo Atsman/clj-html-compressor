@@ -2,6 +2,19 @@
 
 Clojure interlop library for html compressing.
 
+## Usage
+
+```clojure
+(ns you-project-ns
+  (:require [clj-html-compressor.core :as compressor]))
+
+; with one argument and default settings
+(compressor/compress html)
+
+;or two arguments, first settings, second html string
+(compressor/compree {} html)
+```
+
 ## Testing
 
 Run command: `lein test`
