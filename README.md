@@ -1,5 +1,7 @@
 # CLJ-HTML-COMPRESSOR
 
+[![Clojars Project](https://img.shields.io/clojars/v/clj-html-compressor.svg)](https://clojars.org/clj-html-compressor)
+
 Clojure interlop library for html compressing.
 
 ## Usage
