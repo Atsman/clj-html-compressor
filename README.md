@@ -13,8 +13,8 @@ Clojure interlop library for html compressing.
 ; with one argument and default settings
 (compressor/compress html)
 
-;or two arguments, first settings, second html string
-(compressor/compree {} html)
+; or two arguments, first html string, second compiler configuration
+(compressor/compree html {})
 ```
 
 ## Testing
