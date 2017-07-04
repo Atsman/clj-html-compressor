@@ -96,5 +96,5 @@
     (doseq [test-case test-cases]
       (let [sourceHtml (read-file (:source test-case))
             resultHtml (read-file (:result test-case))]
-        (is (= resultHtml (compress (:config test-case) sourceHtml)) 
+        (is (= resultHtml (compress sourceHtml (:config test-case))) 
             (:title test-case))))))

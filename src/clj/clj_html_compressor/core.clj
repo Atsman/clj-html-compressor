@@ -69,7 +69,7 @@
     compressor))
 
 (defn compress 
-  ([html] (compress {} html))
-  ([config html] (let [config (prepare-config config)
+  ([html] (compress html {}))
+  ([html config] (let [config (prepare-config config)
                         compressor (html-compressor config)]
                     (.compress compressor html))))

@@ -1,4 +1,4 @@
-(defproject clj-html-compressor "0.0.1"
+(defproject clj-html-compressor "0.1.1"
   :description "Clojure library for html compressing"
   :url "https://github.com/Atsman/clj-html-compressor"
   :author "Aleh Atsman (http://www.alehatsman.com)"
