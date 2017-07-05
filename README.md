@@ -2,7 +2,7 @@
 
 [![Clojars Project](https://img.shields.io/clojars/v/clj-html-compressor.svg)](https://clojars.org/clj-html-compressor)
 
-Clojure interlop library for html compressing.
+Clojure interlop library for [htmlcompressor](https://code.google.com/archive/p/htmlcompressor/)
 
 ## Usage
 
@@ -14,7 +14,41 @@ Clojure interlop library for html compressing.
 (compressor/compress html)
 
 ; or two arguments, first html string, second compiler configuration
-(compressor/compree html {})
+(compressor/compress html {})
+```
+
+## Config options (with default values)
+
+```clojure
+{:compress-css false ; Enables CSS compression within <style> tags using Yahoo YUI Compressor if set to true.
+ :css-compressor nil ; Sets CSS compressor implementation that will be used to compress inline CSS in HTML.
+ :compress-javascript false ; Enables JavaScript compression within <script> tags using Yahoo YUI Compressor if set to true.
+ :javascript-compressor nil ; Sets JavaScript compressor implementation that will be used to compress inline JavaScript in HTML.
+ :enabled true ; If set to false all compression will be bypassed.
+ :generate-statistics false ; If set to true, HTML compression statistics will be generated.
+ :preserve-line-breaks false ; If set to true, line breaks will be preserved.
+ :preserve-patterns nil ; This method allows setting custom block preservation rules defined by regular expression patterns.
+ :remove-comments true ; If set to true all HTML comments will be removed.
+ :remove-form-attributes false ; If set to true, method="get" attributes will be removed from <form> tags. Default is false.
+ :remove-http-protocol false ; If set to true, HTTP protocol will be removed from href, src, cite, and action tag attributes.
+ :remove-https-protocol false ; If set to true, HTTPS protocol will be removed from href, src, cite, and action tag attributes.
+ :remove-input-attributes false ; If set to true, type="text" attributes will be removed from <input> tags.
+ :remove-intertag-spaces false ; If set to true all inter-tag whitespace characters will be removed.
+ :remove-javascript-protocol false ; If set to true, javascript: pseudo-protocol will be removed from inline event handlers.
+ :remove-link-attributes false ; If set to true, following attributes will be removed from <link rel="stylesheet"> and <link rel="alternate stylesheet"> tags: type="text/css" type="text/plain"
+ :remove-multi-spaces true ; If set to true all multiple whitespace characters will be replaced with single spaces.
+ :remove-quotes false ; If set to true all unnecessary quotes will be removed from tag attributes.
+ :remove-script-attributes false ; If set to true, following attributes will be removed from <script> tags: type="text/javascript" type="application/javascript" language="javascript"
+ :remove-style-attributes false ; If set to true, type="text/style" attributes will be removed from <style> tags.
+ :remove-surrounding-spaces nil ; Enables surrounding spaces removal around provided comma separated list of tags.
+ :simple-boolean-attributes false ; If set to true, any values of following boolean attributes will be removed: checked selected disabled readonly
+ :simple-doctype false ; If set to true, existing DOCTYPE declaration will be replaced with simple <!DOCTYPE html> declaration.
+ :yui-css-line-break -1 ; Tells Yahoo YUI Compressor to break lines after the specified number of symbols during CSS compression.
+ :yui-error-reporter nil ; Sets ErrorReporter that YUI Compressor will use for reporting errors during JavaScript compression.
+ :yui-js-disable-optimizations false ; Tells Yahoo YUI Compressor to disable all the built-in micro optimizations during JavaScript compression.
+ :yui-js-line-break -1 ; Tells Yahoo YUI Compressor to break lines after the specified number of symbols during JavaScript compression.
+ :yui-js-no-munge false ; Tells Yahoo YUI Compressor to only minify javascript without obfuscating local symbols.
+ :yui-js-preserve-all-semicolons false} ; Tells Yahoo YUI Compressor to preserve unnecessary semicolons during JavaScript compression.
 ```
 
 ## Testing
@@ -37,12 +71,7 @@ lein install
 ## <a name="commit"></a> Git Commit Guidelines
 
 We have very precise rules over how our git commit messages can be formatted.  This leads to **more
-readable messages** that are easy to follow when looking through the **project history**.  But also,
-we use the git commit messages to **generate the AngularJS change log**.
-
-The commit message formatting can be added using a typical git workflow or through the use of a CLI
-wizard ([Commitizen](https://github.com/commitizen/cz-cli)). To use the wizard, run `yarn run commit`
-in your terminal after staging your changes in git.
+readable messages** that are easy to follow when looking through the **project history**.
 
 ### Commit Message Format
 Each commit message consists of a **header**, a **body** and a **footer**.  The header has a special
